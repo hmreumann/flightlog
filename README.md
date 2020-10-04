@@ -4,8 +4,8 @@ On the other side, you will be able to analyze your flight data. With different 
 
 # Contributions
 
+Please, contact with hmreumann@hotmail.com
 
-    What does this project do?
-    Why is this project useful?
-    How do I get started?
-    Where can I get more help, if I need it?
+# Code of Conduct
+
+TODO

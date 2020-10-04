@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "354ad3dbb2c38e167a9e69ac7d32a8f8",
+    "content-hash": "e8a5cfeefe63db04fe302d564109718d",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1050,6 +1050,47 @@
                 }
             ],
             "time": "2020-06-13T08:05:20+00:00"
+        },
+        {
+            "name": "laravel-lang/lang",
+            "version": "7.0.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Laravel-Lang/lang.git",
+                "reference": "7bed46cb9befef29660fb20f921a5e7b41aeaaa3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Laravel-Lang/lang/zipball/7bed46cb9befef29660fb20f921a5e7b41aeaaa3",
+                "reference": "7bed46cb9befef29660fb20f921a5e7b41aeaaa3",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*"
+            },
+            "suggest": {
+                "andrey-helldar/laravel-lang-publisher": "Easy installation and update of translation files for your project",
+                "arcanedev/laravel-lang": "Translations manager and checker for Laravel 5",
+                "overtrue/laravel-lang": "Command to add languages in your project"
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Laravel-Lang Team"
+                }
+            ],
+            "description": "Languages for Laravel",
+            "keywords": [
+                "lang",
+                "languages",
+                "laravel",
+                "lpm"
+            ],
+            "time": "2020-10-02T16:55:34+00:00"
         },
         {
             "name": "laravel/fortify",
