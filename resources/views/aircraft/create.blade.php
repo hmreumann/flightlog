@@ -20,6 +20,25 @@
 
                 <x-slot name="form">
 
+                    <!-- Profile Photo -->
+
+                    <!-- manufacturer -->
+                    
+                    <!-- model -->
+                    
+                    <!-- type_designator -->
+                    
+                    <!-- description -->
+                    
+                    <!-- engine_type -->
+                    
+                    <!-- engine_count -->
+                    
+                    <!-- WTC -->
+                    
+                    <!-- registration -->
+                    
+
                 </x-slot>
 
                 <x-slot name="actions">
