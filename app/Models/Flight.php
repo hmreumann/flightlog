@@ -11,25 +11,31 @@ class Flight extends Model
 
     public function user()
     {
-        $this->belongsTo('\App\Models\User');
+        return $this->belongsTo('\App\Models\User');
     }
 
     public function aircraft(){
-        $this->belongsTo('App\Models\Aircraft');
+        return $this->belongsTo('App\Models\Aircraft');
     }
     
     public function departure_airport()
     {
-        $this->belongsTo('\App\Models\Airport','departure_airport_id');
+        return $this->belongsTo('\App\Models\Airport','departure_airport_id');
     }
     
     public function arrival_airport()
     {
-        $this->belongsTo('\App\Models\Airport','arrival_airport_id');
+        return $this->belongsTo('\App\Models\Airport','arrival_airport_id');
     }
 
     public function purpose()
     {
-        $this->belongsTo('\App\Models\Purpose');
+        return $this->belongsTo('\App\Models\Purpose');
     }
+
+    public function flightTimes()
+    {
+        return $this->hasMany('\App\Models\FlightTime');
+    }
+    
 }

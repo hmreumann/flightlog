@@ -61,6 +61,12 @@ class User extends Authenticatable
 
     public function flights()
     {
-        $this->hasMany('App\Models\Flight');
+        return $this->hasMany('App\Models\Flight');
     }
+
+    public function flightTimes()
+    {
+        return $this->hasMany('App\Models\FlightTime');
+    }
+    
 }

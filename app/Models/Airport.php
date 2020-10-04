@@ -11,11 +11,11 @@ class Airport extends Model
 
     public function departure_flights()
     {
-        $this->hasMany('App\Models\Flight','departure_airport_id');
+        return $this->hasMany('App\Models\Flight','departure_airport_id');
     }
 
     public function arrival_flights()
     {
-        $this->hasMany('App\Models\Flight','arrival_airport_id');
+        return $this->hasMany('App\Models\Flight','arrival_airport_id');
     }
 }

@@ -11,7 +11,7 @@ class Aircraft extends Model
 
     public function flights()
     {
-        $this->hasMany('App\Models\Flight');
+        return $this->hasMany('App\Models\Flight');
     }
     
 }
