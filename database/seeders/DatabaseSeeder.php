@@ -20,6 +20,10 @@ class DatabaseSeeder extends Seeder
         DB::unprepared(file_get_contents($path));
         $this->command->info('airports table seeded');
 
+        $path = __DIR__ . './purposes_seed.sql';
+        DB::unprepared(file_get_contents($path));
+        $this->command->info('purposes table seeded');
+
         User::create([
             'name' => 'Admin User',
             'email' => 'admin@user.com',

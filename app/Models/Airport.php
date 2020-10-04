@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Airport extends Model
 {
     use HasFactory;
+
+    public function departure_flights()
+    {
+        $this->hasMany('App\Models\Flight','departure_airport_id');
+    }
+
+    public function arrival_flights()
+    {
+        $this->hasMany('App\Models\Flight','arrival_airport_id');
+    }
 }
