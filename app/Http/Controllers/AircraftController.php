@@ -14,7 +14,9 @@ class AircraftController extends Controller
      */
     public function index()
     {
-        return view('aircraft.index');
+        $aircraft = Aircraft::paginate(6);
+
+        return view('aircraft.index', compact('aircraft'));
     }
 
     /**
@@ -57,7 +59,7 @@ class AircraftController extends Controller
             'registration' => $request['registration']
         ]);
 
-        return redirect()->route('aircraft.show',['aircraft'=>$aircraft]);
+        return redirect()->route('aircraft.index');
     }
 
     /**
