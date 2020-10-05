@@ -25,6 +25,6 @@ Route::middleware('auth:sanctum', 'verified')->group(function () {
     })->name('dashboard');
 
     Route::resources([
-        'aircrafts' => AircraftController::class
+        'aircraft' => AircraftController::class
     ]);
 });

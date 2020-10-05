@@ -7,6 +7,7 @@ use Illuminate\View\Component;
 class FormSection extends Component
 {
     public $method;
+    public $routename;
 
     /**
      * Create a new component instance.
@@ -14,9 +15,10 @@ class FormSection extends Component
      * @param  string  $method
      * @return void
      */
-    public function __construct($method)
+    public function __construct($method, $routename)
     {
         $this->method = $method;
+        $this->routename = $routename;
     }
 
     /**

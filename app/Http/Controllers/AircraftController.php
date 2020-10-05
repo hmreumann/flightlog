@@ -35,7 +35,29 @@ class AircraftController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'manufacturer' => 'required|string|max:30',
+            'model' => 'required|string|max:30',
+            'type_designator' => 'required|string|max:30',
+            'description' => 'required|string|max:30',
+            'engine_type' => 'required|string|max:30',
+            'engine_count' => 'required|integer|max:10',
+            'WTC' => 'required|string|max:30',
+            'registration' => 'required|string|max:30|unique:aircraft'
+        ]);
+
+        $aircraft = Aircraft::create([
+            'manufacturer' => $request['manufacturer'],
+            'model' => $request['model'],
+            'type_designator' => $request['type_designator'],
+            'description' => $request['description'],
+            'engine_type' => $request['engine_type'],
+            'engine_count' => $request['engine_count'],
+            'WTC' => $request['WTC'],
+            'registration' => $request['registration']
+        ]);
+
+        return redirect()->route('aircraft.show',['aircraft'=>$aircraft]);
     }
 
     /**
@@ -46,7 +68,7 @@ class AircraftController extends Controller
      */
     public function show(Aircraft $aircraft)
     {
-        //
+        return view('aircraft.show',compact('aircraft'));
     }
 
     /**

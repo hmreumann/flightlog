@@ -15,14 +15,14 @@ class CreateAircraftTable extends Migration
     {
         Schema::create('aircraft', function (Blueprint $table) {
             $table->id();
-            $table->string('manufacturer');
-            $table->string('model');
-            $table->string('type_designator');
-            $table->string('description');
-            $table->string('engine_type');
+            $table->string('manufacturer',30);
+            $table->string('model',30);
+            $table->string('type_designator',30);
+            $table->string('description',30);
+            $table->string('engine_type',30);
             $table->unsignedSmallInteger('engine_count');
-            $table->string('WTC');
-            $table->string('registration');
+            $table->string('WTC',30);
+            $table->string('registration',30);
             $table->timestamps();
         });
     }
