@@ -14,7 +14,7 @@ class AircraftController extends Controller
      */
     public function index()
     {
-        //
+        return view('aircraft.index');
     }
 
     /**
