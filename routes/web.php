@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AircraftController;
+use App\Http\Livewire\ShowAirports;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +26,9 @@ Route::middleware('auth:sanctum', 'verified')->group(function () {
     })->name('dashboard');
 
     Route::resources([
-        'aircraft' => AircraftController::class
+        'aircraft' => AircraftController::class,
     ]);
+
+    Route::get('/airport', ShowAirports::class);
+    
 });
