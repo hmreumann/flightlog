@@ -5,11 +5,11 @@
         </div>
         <x-table>
             <x-slot name="head">
-                <x-table.heading sortable>Local</x-table.heading>
-                <x-table.heading sortable>Denominación</x-table.heading>
-                <x-table.heading sortable>Tipo</x-table.heading>
-                <x-table.heading sortable>Coordenadas</x-table.heading>
-                <x-table.heading sortable>Elevación (Mts)</x-table.heading>
+                <x-table.heading sortable wire:click="sortBy('local')">Local</x-table.heading>
+                <x-table.heading sortable wire:click="sortBy('denominacion')">Denominación</x-table.heading>
+                <x-table.heading sortable wire:click="sortBy('tipo')">Tipo</x-table.heading>
+                <x-table.heading sortable wire:click="sortBy('coordenadas')">Coordenadas</x-table.heading>
+                <x-table.heading sortable wire:click="sortBy('elev')">Elevación (Mts)</x-table.heading>
             </x-slot>
             <x-slot name="body">
                 @forelse($airports as $airport)
@@ -47,8 +47,8 @@
                 </x-table.row>
                 @empty
                 <x-table.row>
-                    <x-table.cell colspan="5" class="text-center text-cool-gray-600">
-                        <span>Sin aeropuertos para esta busqueda...</span>
+                    <x-table.cell colspan="5" class="text-center">
+                        <span class="text-xl text-gray-500">Sin aeropuertos para esta busqueda...</span>
                     </x-table.cell>
                 </x-table.row>
                 @endforelse
