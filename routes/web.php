@@ -29,6 +29,6 @@ Route::middleware('auth:sanctum', 'verified')->group(function () {
         'aircraft' => AircraftController::class,
     ]);
 
-    Route::get('/airport', ShowAirports::class);
+    Route::get('/airport', ShowAirports::class)->name('airport.index');
     
 });

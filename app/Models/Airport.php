@@ -9,12 +9,27 @@ class Airport extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'local',
+        'denominacion',
+        'tipo',
+        'coordenadas',
+        'latitud',
+        'longitud',
+        'uom_elev',
+    ];
+
+    const TIPOS = [
+        'Aeródromo' => 'Aeródromo',
+        'Helipuerto' => 'Helipuerto',
+    ];
+
     public function getStatusColorAttribute()
     {
         return [
             'Aeródromo' => 'indigo',
             'Helipuerto' => 'green',
-        ][$this->status] ?? 'cool-gray';
+        ][$this->tipo] ?? 'cool-gray';
     }
 
     public function departure_flights()
