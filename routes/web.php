@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AircraftController;
 use App\Http\Livewire\ShowAirports;
+use App\Http\Controllers\AirportController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,5 +31,6 @@ Route::middleware('auth:sanctum', 'verified')->group(function () {
     ]);
 
     Route::get('/airport', ShowAirports::class)->name('airport.index');
+    Route::get('/airport/{airport}', [AirportController::class, 'show'])->name('airport.show');
     
 });

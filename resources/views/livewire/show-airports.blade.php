@@ -5,11 +5,14 @@
                 <x-jet-input wire:model="filters.search" placeholder="Buscar Aeropuerto..." />
                 <x-button.link wire:click="$toggle('showFilters')">@if($showFilters) Esconder @endif Busqueda avanzada...</x-button.link>
             </div>
-            <div class="space-x-4">
+            <div class="flex items-center space-x-4">
                 <x-button.secondary type="button" wire:click="exportSelected">
-                    <x-icon.download /> Exportar</x-button.secondary>
+                    <x-icon.download /> Exportar
+                </x-button.secondary>
+                <livewire:import-airports />
                 <x-button.primary type="button" wire:click="create">
-                    <x-icon.plus /> Nuevo</x-button.primary>
+                    <x-icon.plus /> Nuevo
+                </x-button.primary>
             </div>
         </div>
 
@@ -113,7 +116,8 @@
                     </x-table.cell>
 
                     <x-table.cell wire:click="edit({{ $airport->id }})">
-                        <x-button.link>Edit</x-button.link>
+                        <x-button.link><x-icon.edit /></x-button.link>
+                        <a href="{{ route('airport.show',['airport'=>$airport])}}"><x-icon.eye /></a>
                     </x-table.cell>
 
                 </x-table.row>
