@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Airport;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 use Mapper;
 
 class AirportController extends Controller
@@ -47,8 +48,21 @@ class AirportController extends Controller
      */
     public function show(Airport $airport)
     {
-        Mapper::map($airport->latitud, $airport->longitud,['zoom' => 14]);
-        return view('airport.show',compact('airport'));
+        Mapper::map($airport->latitud, $airport->longitud, ['zoom' => 14]);
+
+        $metar = Http::withHeaders([
+            'X-API-Key' => config('services.checkwx.key'),
+        ])->withOptions([
+            'verify' => base_path('cacert.pem'),
+        ])->get('https://api.checkwx.com/metar/lat/'.$airport->latitud.'/lon/'.$airport->longitud.'/radius/100/decoded')->json();
+
+        $taf = Http::withHeaders([
+            'X-API-Key' => config('services.checkwx.key'),
+        ])->withOptions([
+            'verify' => base_path('cacert.pem'),
+        ])->get('https://api.checkwx.com/taf/lat/'.$airport->latitud.'/lon/'.$airport->longitud.'/radius/100/decoded')->json();
+
+        return view('airport.show', compact('airport', 'metar', 'taf'));
     }
 
     /**

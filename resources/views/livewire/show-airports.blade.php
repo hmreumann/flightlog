@@ -115,8 +115,8 @@
                         </span>
                     </x-table.cell>
 
-                    <x-table.cell wire:click="edit({{ $airport->id }})">
-                        <x-button.link><x-icon.edit /></x-button.link>
+                    <x-table.cell>
+                        
                         <a href="{{ route('airport.show',['airport'=>$airport])}}"><x-icon.eye /></a>
                     </x-table.cell>
 
