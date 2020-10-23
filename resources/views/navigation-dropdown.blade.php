@@ -21,6 +21,9 @@
                     <x-jet-nav-link href="{{ route('airport.index') }}" :active="request()->routeIs('airport.index')">
                         Aeropuertos
                     </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ route('flight.index') }}" :active="request()->routeIs('flight.index')">
+                        Vuelos
+                    </x-jet-nav-link>
                 </div>
             </div>
 
@@ -131,6 +134,9 @@
             </x-jet-responsive-nav-link>
             <x-jet-responsive-nav-link href="{{ route('airport.index') }}" :active="request()->routeIs('airport.index')">
                 Aeropuertos
+            </x-jet-responsive-nav-link>
+            <x-jet-responsive-nav-link href="{{ route('flight.index') }}" :active="request()->routeIs('flight.index')">
+                Vuelos
             </x-jet-responsive-nav-link>
         </div>
 
